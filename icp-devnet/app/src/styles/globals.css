@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add this in your global CSS or a specific component CSS file */
+@keyframes moveUp {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Apply the animation to elements */
+  .animate-move-up {
+    animation: moveUp 1.5s ease-out forwards;
+  }
+  
+  @keyframes jump {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-jump {
+    animation: jump 0.3s ease-in-out;
+  }
+  
+  /* Add this CSS to your global styles or as a CSS module */
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(135deg,  rgba(121, 69, 181, 0.247), rgba(121, 204, 161, 0.5));
+    background-size: 200% 200%;
+   
+  }
+  
+  @keyframes auroraEffect {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+  
+/* styles/global.css */
+.custom-input {
+  @apply w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-color: rgba(129, 140, 248, 0.5);
+}
+
+.custom-button {
+  @apply w-full py-2 text-white font-semibold rounded-lg;
+  background-color: rgba(99, 102, 241, 0.9);
+  transition: all 0.3s ease;
+}
+
+.custom-button:hover:not(:disabled) {
+  background-color: rgba(79, 70, 229, 1);
+  transform: translateY(-1px);
+}
+
+.custom-button:disabled {
+  @apply bg-gray-400;
+}
+
+.custom-label {
+  @apply block text-lg font-bold font-sans;
+  color: rgba(67, 56, 202, 0.9);
+}
+
+.custom-label:hover {
+  color: rgba(55, 48, 163, 1);
+}
+
+.custom-select {
+  @apply w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2;
+  background-color: rgba(238, 242, 255, 0.9);
+  border-color: rgba(129, 140, 248, 0.5);
+  transition: all 0.2s ease;
+}
+
+.custom-select:focus {
+  @apply ring-indigo-400;
+  background-color: rgba(224, 231, 255, 0.95);
+  border-color: rgba(99, 102, 241, 0.8);
+}
+
+
+.full-page-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(90vh - 4rem); /* Adjusting for footer */
+  background-color: var(--background-card);
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  top: -12rem; /* Moves content upwards */
+  left: -10rem; /* Moves content towards the left */
+}
+
+
+.text-style {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.context-variables-container {
+  width: 100%;
+  max-width: 800px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Center content properly */
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Improved button styles */
+.button-sm {
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  background-color: var(--primary);
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-sm:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.proposals-wrapper {
+  width: 100%;
+  max-width: 800px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.select-dropdown {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  background: white;
+}
+
+/* Improved logout button */
+.logout-button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  background-color: var(--danger);
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logout-button:hover {
+  background-color: var(--danger-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+}
+
